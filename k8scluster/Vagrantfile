@@ -1,0 +1,36 @@
+Vagrant.configure("2") do |config|
+  config.vm.provision "shell", path: "scripts/provision.sh"
+ 
+  config.vm.define "node1" do |node1|
+    node1.vm.box = "centos/7"
+    node1.vm.hostname = "kmaster"
+
+    node1.vm.provider "virtualbox" do |v|
+      v.name = "kmaster"
+      v.memory = 2048
+      v.cpus = 2
+      # Prevent VirtualBox from interfering with host audio stack
+      v.customize ["modifyvm", :id, "--audio", "none"]
+    end
+ 
+    # Create a private network, which allows host-only access to the machine
+    # using a specific IP.
+    node1.vm.network "private_network", ip: "192.168.33.20"
+
+  end
+
+  config.vm.define "node2" do |node2|
+    node2.vm.box = "centos/7"
+    node2.vm.hostname = "kworker1"
+
+    node2.vm.provider "virtualbox" do |v|
+      v.name = "kworker1"
+      v.memory = 2048
+      v.cpus = 2
+      # Prevent VirtualBox from interfering with host audio stack
+      v.customize ["modifyvm", :id, "--audio", "none"]
+    end
+    node2.vm.network "private_network", ip: "192.168.33.21"
+
+
+end
