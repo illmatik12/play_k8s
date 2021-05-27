@@ -40,3 +40,16 @@ sudo docker run -d --privileged --restart=unless-stopped --net=host -v /etc/kube
 ```
 sudo docker run -d --privileged --restart=unless-stopped --net=host -v /etc/kubernetes:/etc/kubernetes -v /var/run:/var/run  rancher/rancher-agent:v2.5.8 --server https://192.168.0.130 --token hlcn45c7rjdktpnm4m4q6wmzfrsrxp9v744q6jt86njc7z4gxskksj --ca-checksum 5d4d80f0f8fa7f203d87d4119ff17ae70c6904e06f5c6536f2823750f634afef --node-name rkeworker2 --address 192.168.33.22 --internal-address 192.168.33.22 --worker
 ```
+
+
+## Screen Shots
+![Rancher](./screenshots/1.png)
+![Rancher](./screenshots/2.png)
+![Rancher](./screenshots/3.png)
+![Rancher](./screenshots/4.png)
+![Rancher](./screenshots/5.png)
+![Rancher](./screenshots/6.png)
+![Rancher](./screenshots/7.png)
+![Rancher](./screenshots/8.png)
+![Rancher](./screenshots/9.png)
+![Rancher](./screenshots/10.png)
